@@ -1,0 +1,28 @@
+{
+  "name": "cargo-lab14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/hub/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusdnhartwig/cargo-Lab14.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcusdnhartwig/cargo-Lab14/issues"
+  },
+  "homepage": "https://github.com/marcusdnhartwig/cargo-Lab14#readme",
+  "keywords": [],
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "events": "^3.3.0",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
+    "supergoose": "^0.2.6"
+  }
+}
