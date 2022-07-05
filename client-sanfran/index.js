@@ -7,8 +7,8 @@ const vendorPort = new SanfranClient('vendorPort');
 
 vendorPort.subscribe('CARGO_ORDER', payload => {
   setTimeout(() => {
-    let 
-    console.log(`SF-Port: received order ${payload.orderId} from London`);
+    //let 
+    console.log(`SF-Port: received order ${payload.orderId} from Hong Kong`);
     vendorPort.publish('CARGO_READY', payload);
   }, 3000);
 });

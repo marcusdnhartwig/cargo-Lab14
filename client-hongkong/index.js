@@ -18,6 +18,6 @@ console.log(`Hong Kong port placed order ${order.orderId}`);
 portHK.subscribe('DELIVERED', (payload) => {
   setTimeout(() => {
     console.log(`Hong Kong port received order ${payload.orderId}`);
-    customer.publish('THANK_YOU', payload);
+    portHK.publish('THANK_YOU', payload);
   }, 3000);
 });

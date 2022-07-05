@@ -12,7 +12,7 @@ ship.subscribe('CARGO_READY', payload => {
 
 ship.subscribe('IN_TRANSIT', payload => {
   setTimeout(() => {
-    console.log(`Cargo ${payload.orderId} has been delivered to London.`);
+    console.log(`Cargo ${payload.orderId} has been delivered to ${payload.address}.`);
     ship.publish('DELIVERED', payload);
   });
 });
