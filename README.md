@@ -16,7 +16,7 @@ Create a new application using real-time events. Your team will be responsible f
 
 #### `.env` requirements (where applicable)
 
-* PORT 3000
+* PORT 3000 || 3001
 
 #### How to initialize/run your application (where applicable)
 
