@@ -1,8 +1,9 @@
 'use strict';
 
+require('dotenv').config();
+
 const { io } = require('socket.io-client');
 const SOCKET_URL = process.env.SOCKET_URL || 'http://localhost:3000/cargo';
-require('dotenv').config();
 
 class HongKongClient {
   constructor(queueId) {
@@ -13,7 +14,7 @@ class HongKongClient {
       console.log('Joined Client Queue!', id);
     });
   };
-  
+
   publish(event, payload) {
     this.socket.emit(event, { queueId: this.queueId, ...payload });
   };

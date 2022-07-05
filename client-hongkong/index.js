@@ -1,23 +1,28 @@
 'use strict';
 
 const HongKongClient = require('./client');
+const portHK = new HongKongClient('portHK');
 const { Chance } = require('chance');
 const chance = new Chance();
-const portHK = new HongKongClient('portHK');
 
-// setInterval(() => {
+setTimeout(() => {
 const order = {
   orderId: chance.guid(),
-  customer: chance.name(),
-  address: chance.address(),
+  company: chance.company(),
 };
 portHK.publish('CARGO_ORDER', {portId: chance.guid(), ...order});
-console.log(`Hong Kong port placed order ${order.orderId}`);
-// }, 3000);
+console.log(`Hong Kong port placed order# ${order.orderId}`);
+}, 3000);
 
-portHK.subscribe('DELIVERED', (payload) => {
+portHK.subscribe('IN_TRANSIT', payload => {
   setTimeout(() => {
-    console.log(`Hong Kong port received order ${payload.orderId}`);
-    customer.publish('THANK_YOU', payload);
+    console.log(`Cargo order# ${payload.orderId} is on the way.`);
+  }, 3000);
+});
+
+portHK.subscribe('DELIVERED', payload => {
+  setTimeout(() => {
+    console.log(`Hong Kong port received order# ${payload.orderId}`);
+    portHK.publish('RECEIVED', payload);
   }, 3000);
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-// require('dotenv').config();
+require('dotenv').config();
 
 const { Server } = require('socket.io');
 const PORT = 3000 || 3001;
@@ -63,4 +63,22 @@ cargo.on('connection', socket => {
     cargo.emit('DELIVERED', payload);
   });
 
-})
+  socket.on('THANK_YOU', payload => {
+    let currentQueue = cargoQueue.read(payload.queueId);
+    if (!currentQueue){
+      let queueKey = cargoQueue.store(payload.queueId, new Queue());
+      currentQueue = cargoQueue.read(queueKey);
+    }
+    currentQueue.store(payload.cargoId, payload);
+    cargo.emit('THANK_YOU', payload);
+  });
+
+  // socket.on('RECEIVED', payload => {
+  //   let currentQueue = cargoQueue.read(payload.queueId);
+  //   if(!currentQueue){
+  //     throw new Error('No queue created for this cargo');
+  //   }
+  //   let cargo = currentQueue.remove(payload.cargoId);
+  //   cargo.to(payload.queueId).emit('RECEIVED', cargo);
+  // });
+});
