@@ -10,13 +10,13 @@ Create a new application using real-time events. Your team will be responsible f
 
 ### Links and Resources
 
-* [GitHub](https://github.com/marcusdnhartwig/cargo-Lab14/pull/5)
+* [GitHub](https://github.com/marcusdnhartwig/cargo-Lab14/pull/6)
 
 ### Setup
 
 #### `.env` requirements (where applicable)
 
-* PORT 3000
+* PORT 3000 || 3001
 
 #### How to initialize/run your application (where applicable)
 
@@ -37,4 +37,4 @@ Create a new application using real-time events. Your team will be responsible f
 
 #### UML Diagram
 
-![Lab 14 UML](./src/img/CargoUML.png)
+![Lab 14 UML](./assets/CargoUML.png)
