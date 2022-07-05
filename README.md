@@ -37,4 +37,4 @@ Create a new application using real-time events. Your team will be responsible f
 
 #### UML Diagram
 
-![Lab 14 UML](./src/img/CargoUML.png);
+![Lab 14 UML](./src/img/CargoUML.png)

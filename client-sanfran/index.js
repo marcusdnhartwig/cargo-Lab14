@@ -7,6 +7,7 @@ portSF.subscribe('CARGO_ORDER', payload => {
   setTimeout(() => {
     console.log(`San Francisco port received cargo order# ${payload.orderId} from Hong Kong`);
     portSF.publish('CARGO_READY', payload);
+
   }, 3000);
 });
 
